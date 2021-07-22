@@ -1,1 +1,6 @@
-resolver: lts-11.10
+resolver: lts-17.4
+
+packages:
+  - .
+
+extra-deps: []
