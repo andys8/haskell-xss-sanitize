@@ -60,6 +60,7 @@ balanceTags = balance []
 -- 'safeTags' or 'safeTagsCustom'.
 filterTags :: ([Tag Text] -> [Tag Text]) -> Text -> Text
 filterTags f = renderTagsOptions renderOptions {
+    optEscape = id,
     optMinimize = \x -> x `member` voidElems -- <img><img> converts to <img />, <a/> converts to <a></a>
   } .  f . canonicalizeTags . parseTags
 
